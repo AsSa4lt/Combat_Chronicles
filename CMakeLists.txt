@@ -8,7 +8,8 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image CONFIG REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
-add_executable(Combat_Chronicles main.cpp Game.cpp Game.h)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR})
+
+add_executable(Combat_Chronicles main.cpp Game.cpp Game.h)
 target_link_libraries(Combat_Chronicles  ${SDL2_LIBRARIES}    SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)
 

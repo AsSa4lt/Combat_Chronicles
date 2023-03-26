@@ -4,19 +4,20 @@
 
 #ifndef COMBAT_CHRONICLES_GAME_H
 #define COMBAT_CHRONICLES_GAME_H
-#include "SDL2/SDL.h"
+#include "SDL.h"
 
 
 class Game {
 private:
     SDL_Window *window;
+    bool isRunning;
 public:
     Game();
-    ~Game();
     void init(const char* title, int width, int height, bool fullscreen);
+    void clean();
 
-    static SDL_Renderer *renderer;
-
+    SDL_Renderer *renderer;
+    const bool isActive();
 
 };
 
