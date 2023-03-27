@@ -5,8 +5,11 @@
 #include "Game.h"
 #include "SDL_image.h"
 #include "iostream"
+#include "TextureManager.h"
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::event;
+bool Game::isRunning = false;
 
 
 void Game::init(const char *title, int width, int height, bool fullscreen) {
@@ -27,20 +30,52 @@ void Game::init(const char *title, int width, int height, bool fullscreen) {
          }
          isRunning = true;
     }
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
+
+    SDL_Texture *img = NULL;
+    img = IMG_LoadTexture(renderer, "../Assets/player.png");
+    // put the location where we want the texture to be drawn into a rectangle
+    // I'm also scaling the texture 2x simply by setting the width and height
+    SDL_Rect texr; texr.x = 800/2; texr.y = 640/2; texr.w = 32*2; texr.h = 32*2;
+    SDL_RenderClear(renderer);
+    // copy the texture to the rendering context
+    SDL_RenderCopy(renderer, img, NULL, &texr);
+    // flip the backbuffer
+    // this means that everything that we prepared behind the screens is actually shown
+    SDL_RenderPresent(renderer);
 }
 
 Game::Game() {
 
 }
 
-const bool Game::isActive() {
-    return isRunning;
-}
+
 
 void Game::clean()
 {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
+}
+
+void Game::handleEvents() {
+    SDL_PollEvent(&event);
+    switch (event.type)
+    {
+        case SDL_QUIT :
+            isRunning = false;
+            break;
+        default:
+            break;
+    }
+}
+
+void Game::update() {
+
+}
+
+void Game::render() {
+
 }
 
