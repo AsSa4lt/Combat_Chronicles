@@ -16,7 +16,7 @@ public:
     void init(const char* title, int width, int height, bool fullscreen);
     void clean();
 
-    SDL_Renderer *renderer;
+    static SDL_Renderer *renderer;
     const bool isActive();
 
 };

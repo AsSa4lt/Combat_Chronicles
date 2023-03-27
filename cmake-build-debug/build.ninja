@@ -60,6 +60,13 @@ build CMakeFiles/Combat_Chronicles.dir/Game.cpp.o: CXX_COMPILER__Combat_Chronicl
   OBJECT_DIR = CMakeFiles/Combat_Chronicles.dir
   OBJECT_FILE_DIR = CMakeFiles/Combat_Chronicles.dir
 
+build CMakeFiles/Combat_Chronicles.dir/TextureManager.cpp.o: CXX_COMPILER__Combat_Chronicles_Debug /Users/rostyslav/Desktop/C++$ coding/Combat$ Chronicles/TextureManager.cpp || cmake_object_order_depends_target_Combat_Chronicles
+  DEP_FILE = CMakeFiles/Combat_Chronicles.dir/TextureManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=13.0 -fcolor-diagnostics -std=gnu++17
+  INCLUDES = -I/opt/homebrew/include -isystem /opt/homebrew/include/SDL2
+  OBJECT_DIR = CMakeFiles/Combat_Chronicles.dir
+  OBJECT_FILE_DIR = CMakeFiles/Combat_Chronicles.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Combat_Chronicles
@@ -68,7 +75,7 @@ build CMakeFiles/Combat_Chronicles.dir/Game.cpp.o: CXX_COMPILER__Combat_Chronicl
 #############################################
 # Link the executable Combat_Chronicles
 
-build Combat_Chronicles: CXX_EXECUTABLE_LINKER__Combat_Chronicles_Debug CMakeFiles/Combat_Chronicles.dir/main.cpp.o CMakeFiles/Combat_Chronicles.dir/Game.cpp.o | /opt/homebrew/lib/libSDL2.dylib /opt/homebrew/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib /opt/homebrew/Cellar/sdl2_ttf/2.20.2/lib/libSDL2_ttf.dylib
+build Combat_Chronicles: CXX_EXECUTABLE_LINKER__Combat_Chronicles_Debug CMakeFiles/Combat_Chronicles.dir/main.cpp.o CMakeFiles/Combat_Chronicles.dir/Game.cpp.o CMakeFiles/Combat_Chronicles.dir/TextureManager.cpp.o | /opt/homebrew/lib/libSDL2.dylib /opt/homebrew/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib /opt/homebrew/Cellar/sdl2_ttf/2.20.2/lib/libSDL2_ttf.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=13.0
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libSDL2.dylib  /opt/homebrew/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib  /opt/homebrew/Cellar/sdl2_ttf/2.20.2/lib/libSDL2_ttf.dylib
   LINK_PATH = -L/opt/homebrew/lib

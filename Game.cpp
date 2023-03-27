@@ -3,7 +3,11 @@
 //
 
 #include "Game.h"
+#include "SDL_image.h"
 #include "iostream"
+
+SDL_Renderer* Game::renderer = nullptr;
+
 
 void Game::init(const char *title, int width, int height, bool fullscreen) {
     int flags = 0;
