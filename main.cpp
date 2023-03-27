@@ -14,9 +14,9 @@ int main() {
     uint32_t frameStart;
     int frameTime;
 
-    Button button(100, 100, 50, 50);
     startSettings->init("Settings", 500, 500, false);
     while (startSettings->isRunning){
+        SDL_Event event;
         frameStart = SDL_GetTicks();
         startSettings->update();
         startSettings->handleEvents();
@@ -24,14 +24,7 @@ int main() {
         if(frameDelay > frameTime){
             SDL_Delay(frameDelay-frameTime);
         }
-        SDL_SetRenderDrawColor(StartSettings::renderer, 0, 0, 0, 255);
-        SDL_RenderClear(StartSettings::renderer);
 
-        // Render the button
-        button.render(StartSettings::renderer);
-
-        // Present the renderer to the window
-        SDL_RenderPresent(StartSettings::renderer);
     }
     startSettings->clean();
 

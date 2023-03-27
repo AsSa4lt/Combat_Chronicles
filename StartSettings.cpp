@@ -3,9 +3,12 @@
 //
 
 #include "StartSettings.h"
+#include "Button.h"
+
 SDL_Renderer* StartSettings::renderer = nullptr;
 SDL_Event StartSettings::event;
 bool StartSettings::isRunning = false;
+Button button(100, 100, 50, 50);
 
 StartSettings::StartSettings() {
 
@@ -48,7 +51,11 @@ void StartSettings::handleEvents() {
 }
 
 void StartSettings::update() {
-
+    SDL_SetRenderDrawColor(StartSettings::renderer, 0, 255, 0, 255);
+    SDL_RenderClear(StartSettings::renderer);
+    button.HandleEvents(&event);
+    button.render(renderer);
+    SDL_RenderPresent(StartSettings::renderer);
 }
 
 void StartSettings::clean() {
